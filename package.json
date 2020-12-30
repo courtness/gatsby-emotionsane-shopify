@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-emotionsane-shopify",
+  "name": "gatsby-sanity-shopify",
   "version": "1.0.0",
   "description": "E-commerce boilerplate: GatsbyJS, Emotion + TailwindCSS, Sanity, Shopify",
   "main": "index.js",
@@ -8,13 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/courtness/gatsby-emotionsane-shopify.git"
+    "url": "git+https://github.com/courtness/gatsby-sanity-shopify.git"
   },
   "author": "Dan Courtness",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/courtness/gatsby-emotionsane-shopify/issues"
+    "url": "https://github.com/courtness/gatsby-sanity-shopify/issues"
   },
-  "homepage": "https://github.com/courtness/gatsby-emotionsane-shopify#readme",
+  "homepage": "https://github.com/courtness/gatsby-sanity-shopify#readme",
   "dependencies": {}
 }

@@ -2234,6 +2234,13 @@ aws4@^1.8.0:
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.11.0.tgz#d61f46d83b2519250e2784daf5b09479a8b41c59"
   integrity sha512-xh1Rl34h6Fi1DC2WWKfxUTVqRsNnr6LsKz2+hfwDxQJWmrx8+c7ylaqBMcHfl1U1r2dsifOvKX3LQuLNZ+XSvA==
 
+axios@^0.21.1:
+  version "0.21.1"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
+  integrity sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
+  dependencies:
+    follow-redirects "^1.10.0"
+
 babel-code-frame@^6.26.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-code-frame/-/babel-code-frame-6.26.0.tgz#63fd43f7dc1e3bb7ce35947db8fe369a3f58c74b"
@@ -4662,7 +4669,7 @@ flush-write-stream@^2.0.0:
     inherits "^2.0.3"
     readable-stream "^3.1.1"
 
-follow-redirects@^1.2.4:
+follow-redirects@^1.10.0, follow-redirects@^1.2.4:
   version "1.13.1"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.13.1.tgz#5f69b813376cee4fd0474a3aba835df04ab763b7"
   integrity sha512-SSG5xmZh1mkPGyKzjZP8zLjltIfpW32Y5QpdNJyjcfGxK3qo3NDDkZOZSFiGn1A6SclQxY9GzEwAHQ3dmYRWpg==
@@ -8879,12 +8886,14 @@ sanity-plugin-dashboard-widget-netlify@^1.0.1:
     abort-controller "^2.0.3"
     react-props-stream "^1.0.0"
 
-sanity-shopify-autofill@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/sanity-shopify-autofill/-/sanity-shopify-autofill-0.0.1.tgz#7462d90aaf3fb51241d0daa005b188c336fe2a24"
-  integrity sha512-ASfVszOhaQxBtmo4YDkdGaCwznb83hI1h6COiLU0HxjgqoGAfL2J6ajIOhxENl0Xn9VMH7iP0cBIk4CNYm402Q==
+sanity-shopify-autofill@^0.3.2:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/sanity-shopify-autofill/-/sanity-shopify-autofill-0.3.2.tgz#990f9831c552f9abc57d170943f84cc8942a1640"
+  integrity sha512-NqU/BL7rRsTNIRR+YDNM3G+r0ukSz2CXuI9gaYmXG/VxHQH7jtzGFtEphQITd4UbPXdf0ngrnXYbzg9M4+tNxA==
   dependencies:
+    axios "^0.21.1"
     fs "^0.0.1-security"
+    minimist "^1.2.5"
 
 sax@~1.2.4:
   version "1.2.4"

@@ -1,5 +1,5 @@
 {
-  "name": "emotionsane",
+  "name": "gatsby-sanity-shopify-studio",
   "private": true,
   "version": "1.0.0",
   "description": "",
@@ -9,7 +9,7 @@
   "scripts": {
     "start": "sanity start",
     "autofill": "run-p autofill:load autofill:merge",
-    "autofill:load": "cd ./scripts/sanity-shopify-autofill && npm run fill",
+    "autofill:cache": "node node_modules/sanity-shopify-autofill",
     "autofill:merge": "sanity dataset import ./scripts/sanity-shopify-autofill/export/dump.json production --missing",
     "build": "sanity build"
   },
@@ -32,7 +32,7 @@
     "sanity-plugin-color-list": "^1.2.1",
     "sanity-plugin-dashboard-widget-document-list": "^0.0.11",
     "sanity-plugin-dashboard-widget-netlify": "^1.0.1",
-    "sanity-shopify-autofill": "^0.0.1"
+    "sanity-shopify-autofill": "^0.3.2"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
