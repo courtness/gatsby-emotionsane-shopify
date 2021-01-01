@@ -8,9 +8,6 @@
   "license": "UNLICENSED",
   "scripts": {
     "start": "sanity start",
-    "autofill": "run-p autofill:cache autofill:merge",
-    "autofill:cache": "node ./node_modules/sanity-shopify-autofill",
-    "autofill:merge": "sanity dataset import ./node_modules/sanity-shopify-autofill/dist/.cache/export/shopify-products.json production --missing",
     "build": "sanity build"
   },
   "keywords": [
