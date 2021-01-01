@@ -1,7 +1,5 @@
 `use strict`;
 
-require(`dotenv`).config({ debug: true });
-
 exports.__esModule = true;
 
 import inquirer from "inquirer";
@@ -70,7 +68,5 @@ const main = () => {
       });
   }
 };
-
-exports.main = main;
 
 main();

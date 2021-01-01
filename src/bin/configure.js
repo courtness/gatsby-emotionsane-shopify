@@ -35,6 +35,33 @@ const configure = () => {
       },
       {
         type: `input`,
+        name: `GSS_SANITY_DATASET`,
+        message: `Enter the Sanity dataset to use (e.g. production):`,
+        when: (responses) => !fileExists || responses.continue,
+        validate: (value) => {
+          return (value && value !== ``) || `Please enter a value`;
+        }
+      },
+      {
+        type: `input`,
+        name: `GSS_SANITY_PROJECT_ID`,
+        message: `Enter the Sanity Project ID:`,
+        when: (responses) => !fileExists || responses.continue,
+        validate: (value) => {
+          return (value && value !== ``) || `Please enter a value`;
+        }
+      },
+      {
+        type: `input`,
+        name: `GSS_SANITY_TOKEN`,
+        message: `Enter the Sanity read/write token:`,
+        when: (responses) => !fileExists || responses.continue,
+        validate: (value) => {
+          return (value && value !== ``) || `Please enter a value`;
+        }
+      },
+      {
+        type: `input`,
         name: `GSS_SHOPIFY_STORE`,
         message: `Enter your Shopify Store name (e.g. my-shopify-store):`,
         when: (responses) => !fileExists || responses.continue,
