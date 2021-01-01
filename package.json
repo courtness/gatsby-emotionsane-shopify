@@ -1,20 +1,49 @@
 {
   "name": "gatsby-sanity-shopify",
-  "version": "1.0.0",
+  "type": "commonjs",
+  "version": "0.1.0",
+  "license": "ISC",
+  "author": "Dan Courtness",
   "description": "E-commerce boilerplate: GatsbyJS, Emotion + TailwindCSS, Sanity, Shopify",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx babel src --out-dir dist",
+    "start": "npx babel src --watch --out-dir dist",
+    "test": "echo \"No test specified\""
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/courtness/gatsby-sanity-shopify.git"
   },
-  "author": "Dan Courtness",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/courtness/gatsby-sanity-shopify/issues"
   },
   "homepage": "https://github.com/courtness/gatsby-sanity-shopify#readme",
-  "dependencies": {}
+  "dependencies": {
+    "babel-plugin-dotenv-import": "^2.1.0",
+    "dotenv": "^8.2.0",
+    "inquirer": "^7.3.3",
+    "minimist": "^1.2.5",
+    "sanity-shopify-autofill": "^0.3.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/eslint-parser": "^7.12.1",
+    "@babel/eslint-plugin": "^7.12.1",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-proposal-export-default-from": "^7.12.1",
+    "@babel/plugin-transform-runtime": "^7.12.10",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.12.10",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-root-import": "^6.6.0",
+    "babel-preset-minify": "^0.5.1",
+    "eslint": "^7.15.0",
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.3.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.2.1"
+  }
 }
