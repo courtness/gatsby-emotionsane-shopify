@@ -25,6 +25,7 @@
     "@sanity/default-layout": "^2.0.9",
     "@sanity/default-login": "^2.0.9",
     "@sanity/desk-tool": "^2.0.9",
+    "@sanity/vision": "^2.1.0",
     "eslint-plugin-react": "^7.21.5",
     "prop-types": "^15.7",
     "react": "^17.0",
