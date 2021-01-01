@@ -4,12 +4,12 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 // documents
 import index from "./documents/index";
 import about from "./documents/about";
-import contact from "./documents/collection";
-import contact from "./documents/collectionIndex";
+import collection from "./documents/collection";
+import collectionIndex from "./documents/collectionIndex";
 import contact from "./documents/contact";
 import privacy from "./documents/privacy";
 import product from "./documents/product";
-import product from "./documents/products";
+import products from "./documents/products";
 import terms from "./documents/terms";
 
 // sections

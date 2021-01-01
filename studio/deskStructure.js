@@ -18,7 +18,10 @@ export default () =>
       S.listItem()
         .title(`Collection`)
         .child(
-          S.editor().schemaType(`collection`).documentId(`collection`).title(`Collection`)
+          S.editor()
+            .schemaType(`collection`)
+            .documentId(`collection`)
+            .title(`Collection`)
         ),
       S.listItem({
         id: `all-collections`,
