@@ -24,7 +24,7 @@
     "dotenv": "^8.2.0",
     "inquirer": "^7.3.3",
     "minimist": "^1.2.5",
-    "sanity-shopify-autofill": "^0.4.2"
+    "sanity-shopify-autofill": "^0.4.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.10",

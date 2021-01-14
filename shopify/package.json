@@ -1,0 +1,57 @@
+{
+  "name": "gatsby-sanity-shopify-theme",
+  "version": "1.0.0",
+  "description": "Skeleton Shopify Theme",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm-run-all build:*",
+    "build:js": "npx babel src --out-file assets/theme.js",
+    "build:tw": "npx tailwindcss build src/css/tailwind.css -o assets/tailwind.css",
+    "watch": "npm-run-all watch:*",
+    "watch:theme": "theme watch",
+    "watch:gulp": "gulp",
+    "watch:js": "npx babel src --watch --out-file assets/theme.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/courtness/wildwoodbakery-shopify.git"
+  },
+  "author": "Dan Courtness",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/courtness/wildwoodbakery-shopify/issues"
+  },
+  "homepage": "https://github.com/courtness/wildwoodbakery-shopify#readme",
+  "dependencies": {
+    "autoprefixer": "^10.2.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.1.0",
+    "postcss": "^8.2.4",
+    "tailwindcss": "^2.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/eslint-parser": "^7.12.1",
+    "@babel/eslint-plugin": "^7.12.1",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-proposal-export-default-from": "^7.12.1",
+    "@babel/plugin-transform-runtime": "^7.12.10",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.12.11",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-root-import": "^6.6.0",
+    "babel-preset-minify": "^0.5.1",
+    "eslint": "^7.17.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.2.1"
+  }
+}
