@@ -1,9 +1,12 @@
 {
-  "name": "gatsby-sanity-shopify-theme",
-  "version": "1.0.0",
-  "description": "Skeleton Shopify Theme",
-  "type": "commonjs",
+  "name": "gatsby-sanity-shopify",
+  "version": "0.1.0",
+  "description": "GSS Shopify",
+  "private": true,
+  "license": "MIT",
+  "author": "Dan Courtness <danielcourtness@gmail.com>",
   "main": "index.js",
+  "type": "commonjs",
   "scripts": {
     "build": "npm-run-all build:*",
     "build:js": "npx babel src --out-file assets/theme.js",
@@ -18,8 +21,6 @@
     "type": "git",
     "url": "git+https://github.com/courtness/wildwoodbakery-shopify.git"
   },
-  "author": "Dan Courtness",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/courtness/wildwoodbakery-shopify/issues"
   },

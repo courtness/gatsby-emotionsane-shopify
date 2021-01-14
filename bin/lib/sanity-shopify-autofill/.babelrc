@@ -1,0 +1,22 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": false
+      }
+    ],
+    ["minify"]
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-export-default-from",
+    "babel-plugin-root-import",
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "regenerator": true
+      }
+    ]
+  ]
+}

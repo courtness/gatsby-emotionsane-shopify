@@ -1,0 +1,23 @@
+@charset 'UTF-8';
+
+/* purgecss start ignore */
+@tailwind base;
+@tailwind components;
+/* purgecss end ignore */
+@tailwind utilities;
+
+//
+
+@import "transitions.scss";
+@import "screen.scss";
+@import "fonts.scss";
+
+@import "base.scss";
+@import "common.scss";
+
+@import "components/Form.scss";
+
+@import "templates/customers/account.scss";
+@import "templates/customers/addresses.scss";
+@import "templates/customers/login.scss";
+@import "templates/customers/order.scss";

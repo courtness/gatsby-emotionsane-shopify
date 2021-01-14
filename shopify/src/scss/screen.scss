@@ -1,0 +1,59 @@
+$breakpoints: (
+  xl: 1920px,
+  lg: 1440px,
+  md: 1025px,
+  sm: 768px,
+);
+
+@mixin sm {
+  @media screen and (min-width: map-get($breakpoints, "sm")) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media screen and (min-width: map-get($breakpoints, "md")) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media screen and (min-width: map-get($breakpoints, "lg")) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media screen and (min-width: map-get($breakpoints, "xl")) {
+    @content;
+  }
+}
+
+@mixin hoverable {
+  @media not all and (pointer: coarse) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin ms-ie {
+  @media all and (-ms-high-contrast: none) {
+    @content;
+  }
+}
+
+@mixin ms-edge() {
+  @supports (-ms-ime-align: auto) {
+    @content;
+  }
+}
+
+@mixin ms-all() {
+  @include ms-ie() {
+    @content;
+  }
+  @include ms-edge() {
+    @content;
+  }
+}

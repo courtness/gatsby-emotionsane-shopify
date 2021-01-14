@@ -1,0 +1,5 @@
+clipboard
+dist
+node_modules
+.env
+.env.*

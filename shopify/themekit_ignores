@@ -1,0 +1,14 @@
+.babelrc
+.eslintrc.json
+.gitattributes
+.gitignore
+.prettierrc
+clipboard
+package.json
+postcss.config.js
+tailwind.config.js
+themekit_ignores
+yarn.lock
+
+node_modules
+src

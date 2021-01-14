@@ -1,0 +1,49 @@
+
+{%- if form.posted_successfully? -%}
+  <p class="b1" tabindex="-1" data-form-status>
+    {{ success_message | default: 'We have sent an email, please click the link included to verify your address.' | t }}
+  </p>
+{%- endif -%}
+
+{% assign error_order = "author, email, body, password, form" | split: ", " %}
+
+{%- if form.errors -%}
+  {%- if form.errors.translated_fields | size == 1 and form.errors.first == 'form' -%}
+    <p class="b1" tabindex="-1" data-form-status>
+      {{ form.errors.messages['form'] }}
+    </p>
+
+  {% else %}
+    <div class="relative">
+      <h2 class="b1" tabindex="-1" data-form-status>Error</h2>
+
+      <ul>
+        {% for error in error_order %}
+          {% for field in form.errors %}
+            {% if error == field %}
+
+              {% capture field_label %}
+                {% case field %}
+                  {% when 'author' %}
+                    {{ 'contact.form.name' | t }}
+                  {% when 'body' %}
+                    {{ 'contact.form.message' | t }}
+                  {% else %}
+                    {{ form.errors.translated_fields[field] }}
+                {% endcase %}
+              {% endcapture %}
+
+              <li class="b2">
+                {%- if field == 'form' -%}
+                  {{ form.errors.messages[field] }}
+                {%- else -%}
+                  <a href="#{{ form_id }}-{{ field }}" class="f5">{{ field_label | strip | capitalize }} {{ form.errors.messages[field] }}</a>
+                {%- endif -%}
+              </li>
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      </ul>
+    </div>
+  {%- endif -%}
+{%- endif -%}
