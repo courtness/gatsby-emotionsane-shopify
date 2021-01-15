@@ -11,7 +11,7 @@ import {
 } from "@env";
 import fs from "fs";
 
-export const sanitise = () => {
+export const prefill = () => {
   if (!global?.envFile || !fs.existsSync(global.envFile)) {
     console.error(`\n[error] .env is unset, run Configure first.`);
     return;
@@ -47,4 +47,4 @@ export const sanitise = () => {
   autofill(autofillConfig);
 };
 
-export default sanitise;
+export default prefill;

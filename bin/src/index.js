@@ -4,7 +4,7 @@ exports.__esModule = true;
 
 import inquirer from "inquirer";
 import configure from "~src/bin/configure";
-import sanitise from "~src/bin/sanitise";
+import prefill from "~src/bin/prefill";
 import style from "~src/bin/style";
 import { printBanner, storeArgs } from "~src/utils";
 
@@ -18,8 +18,9 @@ const main = () => {
 
   const modeSelect = (mode) => {
     switch (mode) {
-      case `sanitise`:
-        sanitise();
+      case `p`:
+      case `prefill`:
+        prefill();
         break;
 
       case `c`:
@@ -44,9 +45,9 @@ const main = () => {
   if (global?.args?.mode) {
     modeSelect(global.args.mode);
   } else {
-    console.log(`- Configure : Create a new .env file (do this first)`);
-    console.log(`- Style     : Adjust the grid, typography and colours`);
-    console.log(`- Sanitise  : Download Shopify data and push to Sanity`);
+    console.log(`- Configure : Create all required .env files`);
+    console.log(`- Style     : Define the grid, typography and colours`);
+    console.log(`- Prefill   : Download and push Shopify products to Sanity`);
     console.log(
       `-----------------------------------------------------------------------------\n`
     );
@@ -57,7 +58,7 @@ const main = () => {
           type: `list`,
           name: `mode`,
           message: `Select your mode:`,
-          choices: [`Configure`, `Style`, `Sanitise`],
+          choices: [`Configure`, `Style`, `Prefill`],
           filter: (val) => {
             return val.toLowerCase();
           }

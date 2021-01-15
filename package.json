@@ -7,10 +7,13 @@
   "license": "MIT",
   "main": "package.json",
   "scripts": {
+    "init": "yarn install && yarn inst-all",
     "inst-all": "npm-run-all inst-all:*",
     "inst-all:gatsby": "cd gatsby && yarn install",
-    "inst-all:sanity": "cd sanity && yarn install",
     "inst-all:shopify": "cd shopify && yarn install",
+    "inst-all:sanity": "cd sanity && yarn install",
+    "inst-all:sanitise": "cd sanity && sanity init",
+    "configure": "cd bin && yarn build && node . --mode=c",
     "test": "echo \"No test specified\""
   },
   "devDependencies": {
