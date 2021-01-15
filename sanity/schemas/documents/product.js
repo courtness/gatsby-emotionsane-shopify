@@ -18,9 +18,10 @@ export default {
       description: `Must match the Shopify handle, which you can find at the end of the url in the SEO section at the bottom of a Shopify product page in the dashboard, e.g. for /products/product-name, the handle here should be product-name.`
     },
     {
-      name: `brand`,
-      title: `Brand`,
-      type: `string`
+      name: `description`,
+      title: `Product Description`,
+      type: `text`,
+      validation: (Rule) => Rule.required()
     },
     {
       name: `collections`,
@@ -48,50 +49,6 @@ export default {
       options: {
         layout: `grid`
       }
-    },
-    {
-      name: `description`,
-      title: `Product Description`,
-      type: `text`,
-      validation: (Rule) => Rule.required()
-    },
-    {
-      name: `attributes`,
-      title: `Attributes`,
-      type: `array`,
-      of: [{ type: `attribute` }]
-    },
-    {
-      name: `hairTypes`,
-      title: `Hair Types`,
-      type: `array`,
-      of: [{ type: `string` }]
-    },
-    {
-      name: `productTypes`,
-      title: `Product Types`,
-      type: `array`,
-      of: [{ type: `string` }]
-    },
-    {
-      name: `quote`,
-      title: `Quote`,
-      type: `text`
-    },
-    {
-      name: `imageLeft`,
-      title: `Image Left`,
-      type: `altImage`
-    },
-    {
-      name: `imageRight`,
-      title: `Image Right`,
-      type: `altImage`
-    },
-    {
-      name: `joeyKnows`,
-      title: `Joey Knows`,
-      type: `text`
     },
     {
       name: `related`,

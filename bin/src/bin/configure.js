@@ -4,22 +4,12 @@ import inquirer from "inquirer";
 import fs from "fs";
 
 const configure = () => {
-  const fileExists = fs.existsSync(global.envFile);
-
   inquirer
     .prompt([
-      {
-        type: `confirm`,
-        name: `continue`,
-        message: `This will overwrite your existing .env file. Continue?`,
-        default: false,
-        when: fileExists
-      },
       {
         type: `input`,
         name: `GSS_NAME`,
         message: `Enter your site name (e.g. My Site):`,
-        when: (responses) => !fileExists || responses.continue,
         validate: (value) => {
           return (value && value !== ``) || `Please enter a value`;
         }
@@ -28,7 +18,6 @@ const configure = () => {
         type: `input`,
         name: `GSS_DESCRIPTION`,
         message: `Enter your site description:`,
-        when: (responses) => !fileExists || responses.continue,
         validate: (value) => {
           return (value && value !== ``) || `Please enter a value`;
         }
@@ -37,7 +26,6 @@ const configure = () => {
         type: `input`,
         name: `GSS_SANITY_DATASET`,
         message: `Enter the Sanity dataset to use (e.g. production):`,
-        when: (responses) => !fileExists || responses.continue,
         validate: (value) => {
           return (value && value !== ``) || `Please enter a value`;
         }
@@ -46,7 +34,6 @@ const configure = () => {
         type: `input`,
         name: `GSS_SANITY_PROJECT_ID`,
         message: `Enter the Sanity Project ID:`,
-        when: (responses) => !fileExists || responses.continue,
         validate: (value) => {
           return (value && value !== ``) || `Please enter a value`;
         }
@@ -55,7 +42,6 @@ const configure = () => {
         type: `input`,
         name: `GSS_SANITY_TOKEN`,
         message: `Enter the Sanity read/write token:`,
-        when: (responses) => !fileExists || responses.continue,
         validate: (value) => {
           return (value && value !== ``) || `Please enter a value`;
         }
@@ -64,7 +50,6 @@ const configure = () => {
         type: `input`,
         name: `GSS_SHOPIFY_STORE`,
         message: `Enter your Shopify Store name (e.g. my-shopify-store):`,
-        when: (responses) => !fileExists || responses.continue,
         validate: (value) => {
           return (value && value !== ``) || `Please enter a value`;
         }
@@ -73,7 +58,6 @@ const configure = () => {
         type: `input`,
         name: `GSS_SHOPIFY_KEY`,
         message: `Enter your Shopify API key:`,
-        when: (responses) => !fileExists || responses.continue,
         validate: (value) => {
           return (value && value !== ``) || `Please enter a value`;
         }
@@ -82,18 +66,12 @@ const configure = () => {
         type: `input`,
         name: `GSS_SHOPIFY_PASSWORD`,
         message: `Enter your Shopify API password:`,
-        when: (responses) => !fileExists || responses.continue,
         validate: (value) => {
           return (value && value !== ``) || `Please enter a value`;
         }
       }
     ])
     .then((responses) => {
-      if (fileExists && !responses?.continue) {
-        console.log(`\n[info] Aborted.\n`);
-        return;
-      }
-
       let responseCount = 0;
       let writeableString = ``;
 
@@ -113,17 +91,39 @@ const configure = () => {
         responseCount += 1;
       });
 
-      try {
-        fs.writeFile(global.envFile, writeableString, (err) => {
-          if (err) {
-            throw err;
+      console.log(`\nWriting to .env files:\n${writeableString}\n`);
+
+      inquirer
+        .prompt([
+          {
+            type: `confirm`,
+            name: `continue`,
+            message: `Continue?`,
+            default: false
+          }
+        ])
+        .then((responses) => {
+          if (!responses?.continue) {
+            console.log(`[info] Aborted`);
+            return;
           }
 
-          console.log(`\n[info] Complete! Check your root .env file.\n`);
+          Object.keys(global.envFiles).forEach((envFileKey) => {
+            const envFile = global.envFiles[envFileKey];
+
+            try {
+              fs.writeFile(envFile, writeableString, (err) => {
+                if (err) {
+                  throw err;
+                }
+
+                console.log(`\n[info] Data written to ${envFile}.`);
+              });
+            } catch (e) {
+              console.error(e);
+            }
+          });
         });
-      } catch (e) {
-        console.error(e);
-      }
     });
 };
 

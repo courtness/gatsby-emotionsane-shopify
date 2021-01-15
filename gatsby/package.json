@@ -1,10 +1,11 @@
 {
   "name": "gatsby-sanity-shopify",
+  "author": "Dan Courtness <danielcourtness@gmail.com>",
   "version": "0.1.0",
-  "description": "GSS Gatsby",
+  "description": "PLACEHOLDER_DESCRIPTION - Gatsby",
   "private": true,
   "license": "MIT",
-  "author": "Dan Courtness <danielcourtness@gmail.com>",
+  "main": "package.json",
   "scripts": {
     "clean": "gatsby clean",
     "dev": "run-p dev:**",

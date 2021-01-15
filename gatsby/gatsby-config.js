@@ -124,14 +124,14 @@ function shopifySources() {
 
 module.exports = {
   siteMetadata: {
-    title: `Hereafter`,
-    titleTemplate: `%s - Hereafter`,
-    description: `Hereafter Online`,
+    title: process.env.GSS_NAME,
+    titleTemplate: `%s - ${process.env.GSS_NAME}`,
+    description: process.env.GSS_DESCRIPTION,
     keywords: `store,ecommerce`,
-    author: `dan@loveandmoney.agency`,
+    author: `danielcourtness@gmail.com`,
     image: `/images/share.svg`,
     fbAppId: ``,
-    siteUrl: `https://hereafter-gatsby.netlify.app`,
+    siteUrl: `https://gss-gatsby.netlify.app`,
     twitterUsername: `@twitter`
   },
   plugins: [
@@ -139,8 +139,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Hereafter`,
-        short_name: `hereafter`,
+        name: process.env.GSS_NAME,
+        short_name: `gatsby-sanity-shopify`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,

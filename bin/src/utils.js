@@ -37,5 +37,10 @@ export const storeArgs = () => {
   });
 
   global.args = parsedArgs;
-  global.envFile = `${global.dirname}/../.env`;
+  global.envFiles = {
+    root: `${global.dirname}/../.env`,
+    gatsby: `${global.dirname}/../../gatsby/.env.development`,
+    sanity: `${global.dirname}/../../sanity/.env.development`,
+    shopify: `${global.dirname}/../../shopify/.env.development`
+  };
 };
