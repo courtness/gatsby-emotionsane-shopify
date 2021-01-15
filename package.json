@@ -12,7 +12,7 @@
     "inst-all:gatsby": "cd gatsby && yarn install",
     "inst-all:shopify": "cd shopify && yarn install",
     "inst-all:sanity": "cd sanity && sanity login && sanity init && sanity manage",
-    "inst-all:configure": "cd bin && yarn build && node . --mode=c",
+    "inst-all:configure": "cd bin && yarn install && yarn build && node . --mode=c",
     "test": "echo \"No test specified\""
   },
   "devDependencies": {
