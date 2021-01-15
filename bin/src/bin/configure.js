@@ -73,7 +73,7 @@ const configure = () => {
       {
         type: `input`,
         name: `GATSBY_SHOPIFY_STOREFRONT_TOKEN`,
-        message: `Enter your Shopify API password:`,
+        message: `Enter your Shopify Storefront Token:`,
         validate: (value) => {
           return (value && value !== ``) || `Please enter a value`;
         }

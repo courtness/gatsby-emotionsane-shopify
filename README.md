@@ -20,6 +20,19 @@ A monorepo with skeleton themes and schemas built with:
 $ yarn prep
 ```
 
+- (Optional) Run the prefill tool to download products from Shopify and upload them to Sanity:
+
+```sh
+$ yarn prefill
+```
+
+- Start developing in the gatsby/ folder
+
+```sh
+$ cd gatsby
+$ yarn dev
+```
+
 ## License
 
 MIT

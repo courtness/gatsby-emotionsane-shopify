@@ -13,7 +13,7 @@ import {
 import fs from "fs";
 
 export const prefill = () => {
-  if (!global?.envFile || !fs.existsSync(global.envFile)) {
+  if (!global?.envFile || !fs.existsSync(global.envFiles.root)) {
     console.error(`\n[error] .env is unset, run Configure first.`);
     return;
   }
@@ -44,8 +44,6 @@ export const prefill = () => {
     shopifyStore: GATSBY_SHOPIFY_STORE,
     shopifyStorefrontToken: GATSBY_SHOPIFY_STOREFRONT_TOKEN
   };
-
-  console.log(autofillConfig);
 
   autofill(autofillConfig);
 };
