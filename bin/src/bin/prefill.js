@@ -13,7 +13,7 @@ import {
 import fs from "fs";
 
 export const prefill = () => {
-  if (!global?.envFile || !fs.existsSync(global.envFiles.root)) {
+  if (!global?.envFiles?.root || !fs.existsSync(global?.envFiles?.root)) {
     console.error(`\n[error] .env is unset, run Configure first.`);
     return;
   }
