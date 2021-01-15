@@ -17,7 +17,7 @@ A monorepo with skeleton themes and schemas built with:
 - Run the installation script to download dependencies and create the Sanity project:
 
 ```sh
-$ yarn inst-all
+$ yarn prepare
 ```
 
 - Note the newly created Sanity ID, and run the configuration script to define the env vars:
