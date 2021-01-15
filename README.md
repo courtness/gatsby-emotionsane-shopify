@@ -13,6 +13,11 @@ A monorepo with skeleton themes and schemas built with:
 # Installation
 
 - Clone the repository.
+
+```sh
+$ git clone https://github.com/courtness/gatsby-sanity-shopify
+```
+
 - Create a new private app in Shopify, noting the API key, password and storefront token.
 - Run the installation script to download dependencies and create the Sanity project:
 

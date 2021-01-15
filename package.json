@@ -7,7 +7,6 @@
   "license": "MIT",
   "main": "package.json",
   "scripts": {
-    "prepare": "yarn install && yarn inst-all",
     "inst-all": "npm-run-all inst-all:*",
     "inst-all:gatsby": "cd gatsby && yarn install",
     "inst-all:shopify": "cd shopify && yarn install",

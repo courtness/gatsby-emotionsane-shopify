@@ -7,3 +7,5 @@ clipboard
 dist/
 node_modules/
 public/
+
+yarn-error.log
