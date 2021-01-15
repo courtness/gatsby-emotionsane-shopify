@@ -16,7 +16,7 @@ const StyleGuidePage = ({ location }) => (
       <Grid node="section" styles={[tw`pt-24`]}>
         <ul
           style={{ borderBottom: `1px solid black` }}
-          tw="col-span-22 col-start-2 pb-6"
+          tw="col-span-12 pb-6"
         >
           {Array(4)
             .fill(null)
@@ -44,7 +44,7 @@ const StyleGuidePage = ({ location }) => (
             css`
               border-bottom: 1px solid black;
             `,
-            tw`col-span-22 col-start-2 pb-6`
+            tw`col-span-12 pb-6`
           ]}
         >
           {Array(3)
@@ -62,7 +62,7 @@ const StyleGuidePage = ({ location }) => (
             })}
         </ul>
 
-        <div tw="col-span-22 col-start-2 pt-6">
+        <div tw="col-span-12 pt-6">
           <T.Caption>Caption: Love + Money</T.Caption>
         </div>
       </Grid>

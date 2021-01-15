@@ -24,6 +24,14 @@ const configure = () => {
       },
       {
         type: `input`,
+        name: `GATSBY_REGION_CODE`,
+        message: `Enter your default region (e.g. au):`,
+        validate: (value) => {
+          return (value && value !== ``) || `Please enter a value`;
+        }
+      },
+      {
+        type: `input`,
         name: `SANITY_DATASET`,
         message: `Enter the Sanity dataset to use (e.g. production):`,
         validate: (value) => {

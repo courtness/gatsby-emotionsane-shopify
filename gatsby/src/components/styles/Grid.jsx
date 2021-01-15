@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
  * -----------------------------------------------------------------------------
  * This Tailwind config here should match the grid layout from design.
  */
-const config = tw`grid grid-cols-12 md:grid-cols-24 gap-x-0 md:gap-x-0 relative`;
+const config = tw`grid grid-cols-12 gap-x-0 relative px-6`;
 
 /**
  * -----------------------------------------------------------------------------
