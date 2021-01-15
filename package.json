@@ -11,7 +11,7 @@
     "inst-all": "npm-run-all inst-all:*",
     "inst-all:gatsby": "cd gatsby && yarn install",
     "inst-all:shopify": "cd shopify && yarn install",
-    "inst-all:sanity": "cd sanity && sanity init && sanity manage",
+    "inst-all:sanity": "cd sanity && sanity login && sanity init && sanity manage",
     "inst-all:configure": "cd bin && yarn build && node . --mode=c",
     "test": "echo \"No test specified\""
   },
