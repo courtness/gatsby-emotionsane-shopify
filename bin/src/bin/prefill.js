@@ -2,12 +2,13 @@
 
 import { autofill } from "sanity-shopify-autofill";
 import {
-  GSS_SANITY_DATASET,
-  GSS_SANITY_PROJECT_ID,
-  GSS_SANITY_TOKEN,
-  GSS_SHOPIFY_KEY,
-  GSS_SHOPIFY_PASSWORD,
-  GSS_SHOPIFY_STORE
+  GATSBY_SHOPIFY_KEY,
+  GATSBY_SHOPIFY_PASSWORD,
+  GATSBY_SHOPIFY_STORE,
+  GATSBY_SHOPIFY_STOREFRONT_TOKEN,
+  SANITY_DATASET,
+  SANITY_PROJECT_ID,
+  SANITY_TOKEN
 } from "@env";
 import fs from "fs";
 
@@ -18,12 +19,13 @@ export const prefill = () => {
   }
 
   if (
-    typeof GSS_SHOPIFY_KEY !== `string` ||
-    typeof GSS_SHOPIFY_PASSWORD !== `string` ||
-    typeof GSS_SHOPIFY_STORE !== `string` ||
-    typeof GSS_SANITY_DATASET !== `string` ||
-    typeof GSS_SANITY_PROJECT_ID !== `string` ||
-    typeof GSS_SANITY_TOKEN !== `string`
+    typeof GATSBY_SHOPIFY_STORE !== `string` ||
+    typeof GATSBY_SHOPIFY_STOREFRONT_TOKEN !== `string` ||
+    typeof GATSBY_SHOPIFY_KEY !== `string` ||
+    typeof GATSBY_SHOPIFY_PASSWORD !== `string` ||
+    typeof SANITY_DATASET !== `string` ||
+    typeof SANITY_PROJECT_ID !== `string` ||
+    typeof SANITY_TOKEN !== `string`
   ) {
     console.error(
       `[error] Required environment variables unset. Try re-running configure, or checking your .env file.`
@@ -34,12 +36,13 @@ export const prefill = () => {
   //
 
   const autofillConfig = {
-    sanityDataset: GSS_SANITY_DATASET,
-    sanityProjectId: GSS_SANITY_PROJECT_ID,
-    sanityToken: GSS_SANITY_TOKEN,
-    shopifyKey: GSS_SHOPIFY_KEY,
-    shopifyPassword: GSS_SHOPIFY_PASSWORD,
-    shopifyStore: GSS_SHOPIFY_STORE
+    sanityDataset: SANITY_DATASET,
+    sanityProjectId: SANITY_PROJECT_ID,
+    sanityToken: SANITY_TOKEN,
+    shopifyKey: GATSBY_SHOPIFY_KEY,
+    shopifyPassword: GATSBY_SHOPIFY_PASSWORD,
+    shopifyStore: GATSBY_SHOPIFY_STORE,
+    shopifyStorefrontToken: GATSBY_SHOPIFY_STOREFRONT_TOKEN
   };
 
   console.log(autofillConfig);

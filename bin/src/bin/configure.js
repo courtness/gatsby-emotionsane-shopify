@@ -24,7 +24,7 @@ const configure = () => {
       },
       {
         type: `input`,
-        name: `GSS_SANITY_DATASET`,
+        name: `SANITY_DATASET`,
         message: `Enter the Sanity dataset to use (e.g. production):`,
         validate: (value) => {
           return (value && value !== ``) || `Please enter a value`;
@@ -32,7 +32,7 @@ const configure = () => {
       },
       {
         type: `input`,
-        name: `GSS_SANITY_PROJECT_ID`,
+        name: `SANITY_PROJECT_ID`,
         message: `Enter the Sanity Project ID:`,
         validate: (value) => {
           return (value && value !== ``) || `Please enter a value`;
@@ -40,7 +40,7 @@ const configure = () => {
       },
       {
         type: `input`,
-        name: `GSS_SANITY_TOKEN`,
+        name: `SANITY_TOKEN`,
         message: `Enter the Sanity read/write token:`,
         validate: (value) => {
           return (value && value !== ``) || `Please enter a value`;
@@ -48,7 +48,7 @@ const configure = () => {
       },
       {
         type: `input`,
-        name: `GSS_SHOPIFY_STORE`,
+        name: `GATSBY_SHOPIFY_STORE`,
         message: `Enter your Shopify Store name (e.g. my-shopify-store):`,
         validate: (value) => {
           return (value && value !== ``) || `Please enter a value`;
@@ -56,7 +56,7 @@ const configure = () => {
       },
       {
         type: `input`,
-        name: `GSS_SHOPIFY_KEY`,
+        name: `GATSBY_SHOPIFY_KEY`,
         message: `Enter your Shopify API key:`,
         validate: (value) => {
           return (value && value !== ``) || `Please enter a value`;
@@ -64,7 +64,15 @@ const configure = () => {
       },
       {
         type: `input`,
-        name: `GSS_SHOPIFY_PASSWORD`,
+        name: `GATSBY_SHOPIFY_PASSWORD`,
+        message: `Enter your Shopify API password:`,
+        validate: (value) => {
+          return (value && value !== ``) || `Please enter a value`;
+        }
+      },
+      {
+        type: `input`,
+        name: `GATSBY_SHOPIFY_STOREFRONT_TOKEN`,
         message: `Enter your Shopify API password:`,
         validate: (value) => {
           return (value && value !== ``) || `Please enter a value`;
