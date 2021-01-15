@@ -18,23 +18,23 @@ export default {
         height: `small`
       }
     },
-    {
-      name: `netlify`,
-      options: {
-        title: `My Netlify deploys`,
-        sites: [
-          {
-            title: `Hereafter`,
-            apiId: `86cb5b7d-006d-4032-8dfb-46b05b0e98dc`,
-            buildHookId: `5fd2d692bab0b44a4b705b34`,
-            name: `hereafter-sanity`
-          }
-        ]
-      },
-      layout: {
-        width: `small`,
-        height: `small`
-      }
-    }
+    // {
+    //   name: `netlify`,
+    //   options: {
+    //     title: `My Netlify deploys`,
+    //     sites: [
+    //       {
+    //         title: `Gatsby on Netlify`,
+    //         apiId: ``,
+    //         buildHookId: ``,
+    //         name: ``
+    //       }
+    //     ]
+    //   },
+    //   layout: {
+    //     width: `small`,
+    //     height: `small`
+    //   }
+    // }
   ]
 };
