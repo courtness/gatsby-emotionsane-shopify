@@ -22,7 +22,7 @@ $ git clone https://github.com/courtness/gatsby-sanity-shopify
 - Run the installation script to download dependencies and create the Sanity project:
 
 ```sh
-$ yarn prepare
+$ yarn prep
 ```
 
 - Note the newly created Sanity ID, and run the configuration script to define the env vars:
