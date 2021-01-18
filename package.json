@@ -9,6 +9,8 @@
   "scripts": {
     "prep": "yarn install && yarn inst-all",
     "inst-all": "npm-run-all inst-all:*",
+    "inst-all:bin": "cd bin && yarn install && yarn build",
+    "inst-all:autofill": "cd bin/lib/sanity-shopify-autofill && yarn install && yarn build",
     "inst-all:gatsby": "cd gatsby && yarn install",
     "inst-all:shopify": "cd shopify && yarn install",
     "inst-all:sanity": "cd sanity && sanity login && sanity init && sanity graphql deploy && sanity manage",

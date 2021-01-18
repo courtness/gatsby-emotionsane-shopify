@@ -42,6 +42,8 @@ const autofill = ({
     shopify
       .import()
       .then((products) => {
+        console.log(`[info] Shopify download complete`);
+
         sanity.transform(products).then((documents) => {
           console.log(`[info] Shopify transform complete`);
 

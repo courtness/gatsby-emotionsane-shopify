@@ -1,7 +1,6 @@
-import { promises as fs } from "fs";
+import { promises as fs, promises } from "fs";
 import sanityClient from "@sanity/client";
 
-const { default: PQueue } = require(`p-queue`);
 // import PQueue from `p-queue`;
 
 /**
@@ -107,25 +106,55 @@ class SanityAPI {
       throw new Error(`Sanity Client has not yet been instantiated`);
     }
 
-    // TODO : get concurrency working properly here
+    if (!documents?.[0]) {
+      throw new Error(`Documents is not iterable`);
+    }
+
+    const processDocument = async (document) => {
+      return new Promise((resolve, reject) => {
+        console.log(`[info] Uploading ${document.title}...`);
+
+        try {
+          this.client.createIfNotExists(document).then((response) => {
+            // todo: something better than dumb timeouts
+            // if (response?.handle) {
+            //   console.log(
+            //     `[info] Created ${document.title} [${response.handle}]`
+            //   );
+            // }
+
+            resolve(response);
+          });
+        } catch (e) {
+          reject(e);
+        }
+      });
+    };
+
+    //
+    // todo: something better than dumb timeouts
+
+    const promises = [];
+
+    documents.forEach((document, documentIndex) => {
+      setTimeout(() => {
+        promises.push(processDocument(document));
+      }, documentIndex * 500);
+    });
+
+    return Promise.all(promises);
+
+    //
+    // todo:  queues..?
+
+    // const { default: PQueue } = require(`p-queue`);
     // const queue = new PQueue({
     //   concurrency: 1,
-    //   timeout: 250
+    //   interval: 1000 / 25
     // });
-    // queue.add(() => {
-    // });
-
-    return Promise.all(
-      documents.map((document) => {
-        // this.client.createIfNotExists(document);
-        this.client.createOrReplace(document);
-
-        console.log(`[info] Uploading "${document.title}"...`);
-      })
-    );
+    //
+    // ...
   };
-
-  // todo : Shopify webhooks
 }
 
 export default SanityAPI;

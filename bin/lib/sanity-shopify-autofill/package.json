@@ -9,7 +9,7 @@
   "type": "commonjs",
   "scripts": {
     "build": "npx babel src --out-dir dist",
-    "start": "npx babel src --watch --out-dir dist",
+    "watch": "npx babel src --watch --out-dir dist",
     "test": "echo \"No test specified\""
   },
   "dependencies": {

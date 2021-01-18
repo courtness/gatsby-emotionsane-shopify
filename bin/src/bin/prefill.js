@@ -1,6 +1,6 @@
 "use strict";
 
-import { autofill } from "sanity-shopify-autofill";
+import { autofill } from "../../lib/sanity-shopify-autofill";
 import {
   GATSBY_SHOPIFY_KEY,
   GATSBY_SHOPIFY_PASSWORD,
@@ -44,6 +44,8 @@ export const prefill = () => {
     shopifyStore: GATSBY_SHOPIFY_STORE,
     shopifyStorefrontToken: GATSBY_SHOPIFY_STOREFRONT_TOKEN
   };
+
+  console.log(`autofilling`);
 
   autofill(autofillConfig);
 };
