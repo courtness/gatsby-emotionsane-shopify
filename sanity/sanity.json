@@ -1,5 +1,9 @@
 {
   "root": true,
+  "api": {
+    "projectId": "",
+    "dataset": ""
+  },
   "project": {
     "name": "gatsby-sanity-shopify"
   },

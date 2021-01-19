@@ -15,6 +15,7 @@
     "inst-all:shopify": "cd shopify && yarn install",
     "inst-all:sanity": "cd sanity && sanity login && sanity init && sanity graphql deploy && sanity manage",
     "inst-all:configure": "cd bin && yarn install && yarn build && node . --mode=c",
+    "inst-all:commit": "git commit -a -m 'Initial configuration'; git push",
     "prefill": "cd bin && node . --mode=p",
     "test": "echo \"No test specified\""
   },
